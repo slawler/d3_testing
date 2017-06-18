@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="multiline.css">
+    <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3-time.v1.min.js"></script>
+    <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+    <!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+</head>
+<body>
+<div class="chart-wrapper" id="chart-line1"></div>
+
+<script type="text/javascript">
+    d3.tsv('https://raw.githubusercontent.com/slawler/d3_testing/master/sample_data.tsv?token=AMUaJ2AqTU_gAsUB1sKck0B_FG0rvPLCks5ZT-N6wA%3D%3D', function(error, data) {
+    data.forEach(function (d) {
+        d.year = +d.year;
+        d.variableA = +d.variableA;
+        d.variableB = +d.variableB;
+        d.variableC = +d.variableC;
+        d.variableD = +d.variableD;
+    });
+
+    var chart = makeLineChart(data, 'year', {
+        '8574680': {column: '8574680'},
+        '8594900': {column: '8594900'},
+        '8635750': {column: '8635750'},
+        '8638863': {column: '8638863'}
+    }, {xAxis: 'Date', yAxis: 'Stage'});
+    chart.bind("#chart-line1");
+    chart.render();
+
+});
+</script>
+<script src="multiline.js" charset="utf-8"></script>
+</body>
+</html>
