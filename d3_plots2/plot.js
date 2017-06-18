@@ -1,7 +1,4 @@
 
-<script src="http://d3js.org/d3.v4.min.js"></script>
-<script>
-
 var svg = d3.select("svg"),
     margin = {top: 20, right: 80, bottom: 30, left: 50},
     width = svg.attr("width") - margin.left - margin.right,
@@ -80,4 +77,4 @@ function type(d, _, columns) {
   return d;
 }
 
-</script>
+
